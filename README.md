@@ -12,8 +12,8 @@ This is the source code repository of drink management application that works on
 
 ### Detais about the Code Implementaion
 1. The AutoUnsubscribe method is being developed in a way that whenever you need to go to another page your observables are going to be destroyed. This will help the application to become faster. What you just need to do is to add `@AutoUnsubscribe` decorator to any component you want to unsubscribe
-2. Dynamic locationing of text fields. In `CoctailDetailComponent`, you will see that the data is being postioned dynamically with the method of `chunkSizeSettingForDynamicRow()`. The reason for this is because, we don't have enough data to position the coctail detail.
-3. Pagination is added to List page because the data could be huge and we give the flexibility of loading the list faster using the client side pagination
+2. Dynamic positioning of text fields were developed. In `CoctailDetailComponent`, you will see that the data is being postioned dynamically with the method of `chunkSizeSettingForDynamicRow()`. The reason for this is because, we don't have enough data to position the coctail detail.
+3. Pagination is added to the List page because the data could be huge and we give the flexibility of loading the list faster using the client side pagination
 
 ## Screenshots from the Application
 ![](pictures/MainPage.JPG)

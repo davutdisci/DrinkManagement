@@ -12,26 +12,29 @@ import { CoctailService } from '../../services/coctails.service';
 })
 export class CoctailDetailComponent implements OnInit {
 
-  @Input() coctail:ICoctail;
+  @Input() coctail: ICoctail;
   @Input() drinkID: string
   public row: number;
-	public rows;
+  public rows;
   public tempFieldsRow;
   public rowData = [];
 
-  public coctailDetail:ICoctail;
+  public coctailDetail: ICoctail;
 
   constructor(
     public activeModal: NgbActiveModal,
-    public _coctailService:CoctailService) {}
+    public _coctailService: CoctailService) { }
 
-    ngOnInit() {
-    this._coctailService.GetCoctailByID(this.drinkID).subscribe(result=>{
-      this.coctail = result.drinks && result.drinks.length? result.drinks[0]: null;
+  ngOnInit() {
+    this._coctailService.GetCoctailByID(this.drinkID).subscribe(result => {
+      this.coctail = result.drinks && result.drinks.length ? result.drinks[0] : null;
       this.chunkSizeSettingForDynamicRow()
     })
   }
 
+  /*
+    This method is dividing the coctail data into chunks of dynamic positioning
+  */
   private chunkSizeSettingForDynamicRow() {
     this.tempFieldsRow = Object.entries(this.coctail);
     this.sanitizeCoctailData();
@@ -46,11 +49,14 @@ export class CoctailDetailComponent implements OnInit {
     this.rowData = groups;
   }
 
-
-  private sanitizeCoctailData(){
-    this.tempFieldsRow.forEach(row=>{
-      if(row[0].includes("str")){
-       row[0] = row[0].replace(/^.{3}/g, '');
+  /* 
+    This method is going to remove the 'str' from each entry field of coctail data 
+    because it is not logical to show that string everytime the data is being shown to the user
+  */
+  private sanitizeCoctailData() {
+    this.tempFieldsRow.forEach(row => {
+      if (row[0].includes("str")) {
+        row[0] = row[0].replace(/^.{3}/g, '');
       }
     })
   }

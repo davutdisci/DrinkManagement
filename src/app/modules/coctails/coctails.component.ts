@@ -39,12 +39,19 @@ export class CoctailsComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  /*
+    @param event: page Number to go to in the list
 
+  */ 
   public PageChange(event) {
     this.currentPage = event;
     this.paginateResults();
   }
 
+  /*
+    This method is to paginate the data in the client side to load items faster
+  */
   private paginateResults() {
     this.paginatedCoctails = this.coctails.slice((this.currentPage - 1) * this.pageSize, this.pageSize * this.currentPage);
   }
@@ -62,6 +69,10 @@ export class CoctailsComponent implements OnInit {
 
   }
 
+  /*
+    This method is to call the related method of coctail service 
+    upon chosing the right filter and its value
+  */
   public SearchCoctails(event) {
     this._coctailService[`${this.functionMapping[event.filter]}`](event.filterValue).subscribe(result=>{
         this.coctails = result['drinks'] as ICoctail[];

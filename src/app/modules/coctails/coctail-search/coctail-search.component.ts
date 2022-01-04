@@ -19,6 +19,10 @@ export class CoctailSearchComponent implements OnInit {
     this.SearchCoctails();
   }
 
+  /*
+    The method to send selected filter and its value to the parent component
+    to initiate the search on the http api
+  */
   public SearchCoctails(){
     this.filterChanged.emit({filter: this.chosenFilter, filterValue: this.filterValue});
   }
