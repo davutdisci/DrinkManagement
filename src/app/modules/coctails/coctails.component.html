@@ -1,0 +1,40 @@
+<app-coctail-search (filterChanged)="SearchCoctails($event)">
+
+</app-coctail-search>
+
+<div *ngIf="coctails && coctails.length">
+  <div class="ibox-content"
+       style="border-top: none; margin-top: 20px;">
+    <table class="table table-striped">
+      <tr>
+        <th *ngFor="let column of headerColumns"> {{column.header}}</th>
+
+      </tr>
+      <tr *ngFor="let coctail of paginatedCoctails">
+
+        <td *ngFor="let column of headerColumns">
+          <span *ngIf="column.field == 'strDrinkThumb' else otherFields">
+            <img src="{{coctail[column.field]}}"
+                 width="50px"
+                 height="50px">
+          </span>
+          <ng-template #otherFields>
+            {{coctail[column.field]}}
+          </ng-template>
+
+        </td>
+        <td> <button type="button"
+                  class="btn btn-secondary"
+                  (click)=ViewCoctailDetail(coctail?.idDrink)> View Coctail </button> </td>
+
+
+      </tr>
+    </table>
+    <ngb-pagination [collectionSize]="collectionSize"
+                    [(page)]="currentPage"
+                    aria-label="Default pagination"
+                    (pageChange)="PageChange($event)"></ngb-pagination>
+
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.table > thead > tr > th {
+    border-bottom: 1px solid #dddddd;
+    vertical-align: bottom;
+}
+.table{
+    width: 50%;
+    height:60%
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    /* border-top: 1px solid #e7eaec; */
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0px;
+}
+
+.row > div{
+    margin-left: 30px !important;
+}
+
+.m-t-md{
+    margin-top: 25px !important;
+}

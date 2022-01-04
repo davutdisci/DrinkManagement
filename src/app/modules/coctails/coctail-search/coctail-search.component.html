@@ -1,0 +1,22 @@
+<div class="row justify-content-start m-t-md">
+  <div class="col col-2">
+    <span> Filter Name</span>
+    <ng-select [items]="filters"
+               [(ngModel)]="chosenFilter"
+               [clearable]="false"
+               [ngModelOptions]="{ standalone: true }"> </ng-select>
+  </div>
+
+  <div class="col col-2">
+    <span> Filter Value</span>
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="filterValue" />
+  </div>
+
+  <div class="col col-2">
+    <button type="button"
+            class="btn btn-primary m-t-md"
+            (click)=SearchCoctails()> Search </button>
+  </div>
+</div>
