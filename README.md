@@ -18,3 +18,7 @@ This is the source code repository of drink management application that works on
 ## Screenshots from the Application
 ![](pictures/MainPage.JPG)
 ![](pictures/PageDetail.JPG)
+
+
+## Testing
+Testing Bed is prepared for the application to continue writing the test cases of methods. Some simple test cases are added but some additions are to be made  to cover all the code base
