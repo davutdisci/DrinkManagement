@@ -1,4 +1,4 @@
-# DrinkManagement Application
+# DrinkManagement Angular Application
 This is the source code repository of drink management application that works on Angular Front End Framework using, JavaScript, Bootstrap and additional Libraries.
 
 ## Project Structure
